@@ -12,8 +12,8 @@
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 **/
 ;(function($) {
-	$.fn.limitChars = function(options) {
-		var settings = $.extend({}, $.fn.limitChars.defaults, options);
+	$.fn.limit = function(options) {
+		var settings = $.extend({}, $.fn.limit.defaults, options);
 
 		//Initialize
 		return this.each(function(i, domEl) {
@@ -94,7 +94,7 @@
 	};
 
 	//Default Settings
-	$.fn.limitChars.defaults = {
+	$.fn.limit.defaults = {
 		maxlength: 300,
 		label: 'Remaining:',
 		visible: 'before'
