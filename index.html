@@ -15,38 +15,70 @@
 <div class="container">
 	<h3 class="title"> jQuery Character Limit - Examples </h3>
 
-	<div contenteditable="true" class="limit-chars"></div>
-
-	<br>
-	<br>
-
 	<form>
-		<textarea class="limit-chars" rows="8" cols="28" maxlength=""></textarea>
+		<small>Limited textarea element with "remaining" label showing <strong>before</strong> (<i>by default the label appears before/above the element</i>)</small><br>
+		<textarea id="limit-above" rows="8" cols="28"></textarea>
 	</form>
 
 	<br>
+	<hr>
 	<br>
 
 	<form>
-		<textarea id="specialLimit" rows="8" cols="28" maxlength=""></textarea>
+		<small>Limited textarea element with the label showing <strong>after</strong> </small><br>
+		<textarea id="limit-below" rows="8" cols="28"></textarea>
 	</form>	
+
+	<br>
+	<hr>
+	<br>
+
+	<form>
+		<small>Limited textarea element with the label being <strong>hidden</strong> </small><br>
+		<textarea id="limit-hidden" rows="8" cols="28"></textarea>
+	</form>	
+
+	<br>
+	<hr>
+	<br>	
+
+	<small>Limited contentEditable element (<i>by default the label appears before/above the element</i>)</small><br>
+	<div id="limit-editable" contenteditable="true"></div>
+
+	<br>
 </div>
 </body>
 <script type="text/javascript" src="../jquery.min.v1.7.1.js"></script>
 <script type="text/javascript" src="limit.js"></script>
 <script>
 
-	//Example
-	$('.limit-chars').limit({ 
-		maxlength: 20
+	//Example - With label showing above
+	$('#limit-above').limit({ 
+		maxlength: 40,
+		label: 'Remaining:'
 	});
 
 
-	//Example
-	$('#specialLimit').limit({
-		maxlength: 3,
+	//Example - With label showing below
+	$('#limit-below').limit({
+		maxlength: 34,
+		visible: 'after',
+		label: 'Remaining Characters:'
+	});	
+
+
+	//Example - With hidden label
+	$('#limit-hidden').limit({
+		maxlength: 10,
 		visible: false
 	});
+
+
+	//Example - With contentEditable element
+	$('#limit-editable').limit({ 
+		maxlength: 60,
+		label: 'Left Characters:'
+	});	
 	
 </script>
 </html>

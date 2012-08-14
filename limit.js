@@ -16,7 +16,7 @@
 		var settings = $.extend({}, $.fn.limit.defaults, options);
 
 		//Initialize
-		return this.each(function(i, domEl) {
+		return this.each(function(i) {
 			var $this = $(this), 
 			labelContent = '<div class="remaining">' + settings.label + '&nbsp; <span class="count">' + settings.maxlength + '</span></div>', 
 			$count;
