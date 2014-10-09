@@ -1,84 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-
+<meta charset="utf-8">
 <title>jQuery Character Limit</title>
-
-<link rel="stylesheet" type="text/css" href="" />
+<link href="style.css?v=0.0.2" rel="stylesheet">
 <style>
 	[contenteditable=true] { border:1px solid #333; width:208px; height:100px; padding:4px; }
 	.error { color:red !important; }
 </style>
 </head>
 <body>
-<div class="container">
-	<h3 class="title"> jQuery Character Limit - Examples </h3>
+	<a href="https://github.com/vasilionjea/jQuery-Character-Limit"><img style="position:absolute; top:0; right:0; border:0; z-index:999;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
 
-	<form>
-		<small>Limited textarea element with "remaining" label showing <strong>before</strong> (<i>by default the label appears before/above the element</i>)</small><br>
-		<textarea id="limit-above" rows="8" cols="28"></textarea>
-	</form>
+	<h1 class="page-title" id="jqlimit">jQuery.limit</h1>
 
-	<br>
-	<hr>
-	<br>
+	<div class="container">
+		<h2 class="title">Examples</h2>
+		<hr>
+		<br>
 
-	<form>
-		<small>Limited textarea element with the label showing <strong>after</strong> </small><br>
-		<textarea id="limit-below" rows="8" cols="28"></textarea>
-	</form>	
+		<form>
+			<small>Limited textarea element with "remaining" label showing <strong>before</strong> (<i>by default the label appears before/above the element</i>)</small><br>
+			<textarea id="limit-above" rows="8" cols="28"></textarea>
+		</form>
 
-	<br>
-	<hr>
-	<br>
+		<br>
+		<hr>
+		<br>
 
-	<form>
-		<small>Limited textarea element with the label being <strong>hidden</strong> </small><br>
-		<textarea id="limit-hidden" rows="8" cols="28"></textarea>
-	</form>	
+		<form>
+			<small>Limited textarea element with the label showing <strong>after</strong> </small><br>
+			<textarea id="limit-below" rows="8" cols="28"></textarea>
+		</form>	
 
-	<br>
-	<hr>
-	<br>	
+		<br>
+		<hr>
+		<br>
 
-	<small>Limited contentEditable element (<i>by default the label appears before/above the element</i>)</small><br>
-	<div id="limit-editable" contenteditable="true"></div>
+		<form>
+			<small>Limited textarea element with the label being <strong>hidden</strong> </small><br>
+			<textarea id="limit-hidden" rows="8" cols="28"></textarea>
+		</form>	
 
-	<br>
-</div>
+		<br>
+		<hr>
+		<br>	
+
+		<small>Limited contentEditable element (<i>by default the label appears before/above the element</i>)</small><br>
+		<div id="limit-editable" contenteditable="true"></div>
+		<br>
+	</div>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="limit.js?v=0.0.2"></script>
+	<script>
+		//Example - With label showing above
+		$('#limit-above').limit({ 
+			maxlength: 40,
+			label: 'Remaining:'
+		});
+
+
+		//Example - With label showing below
+		$('#limit-below').limit({
+			maxlength: 34,
+			visible: 'after',
+			label: 'Remaining Characters:'
+		});
+
+
+		//Example - With hidden label
+		$('#limit-hidden').limit({
+			maxlength: 10,
+			visible: false
+		});
+
+
+		//Example - With contentEditable element
+		$('#limit-editable').limit({ 
+			maxlength: 60,
+			label: 'Left Characters:'
+		});
+	</script>
 </body>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="limit.js"></script>
-<script>
-
-	//Example - With label showing above
-	$('#limit-above').limit({ 
-		maxlength: 40,
-		label: 'Remaining:'
-	});
-
-
-	//Example - With label showing below
-	$('#limit-below').limit({
-		maxlength: 34,
-		visible: 'after',
-		label: 'Remaining Characters:'
-	});	
-
-
-	//Example - With hidden label
-	$('#limit-hidden').limit({
-		maxlength: 10,
-		visible: false
-	});
-
-
-	//Example - With contentEditable element
-	$('#limit-editable').limit({ 
-		maxlength: 60,
-		label: 'Left Characters:'
-	});	
-	
-</script>
 </html>
