@@ -60,6 +60,8 @@
 				var remaining_chars = settings.maxlength - ($this.val().length || $this.text().length); //val() for input or text() for contentEditable
 
 				if (remaining_chars === 0 || remaining_chars < 0) {
+					//Set remaining_chars equal to zero to prevent a negative number from showing up in the label
+					remaining_chars = 0;
 					$count.addClass('error');
 
 					if ($this.attr('contenteditable')) {
