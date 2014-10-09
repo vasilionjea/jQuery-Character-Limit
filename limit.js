@@ -1,6 +1,6 @@
 /**
  * name:            Limit
- * version:         0.0.1
+ * version:         0.0.2
  * author:          Billy Onjea  (istocode.com)
  * description:     A jQuery Plugin that limits amount of characters in a textarea or contentEditable element
  * homepage:        http://istocode.com/shared/javascript/jquery/limit
